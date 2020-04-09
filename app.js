@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = process.env.port || 3000
+const PORT = process.env.PORT || 3000
 const mtaKey = process.env.MTA_KEY || 'your key that you should not commit with git here'
 var mtaGtfs = require('mta-gtfs')
 var mta = new mtaGtfs({ key: mtaKey })
