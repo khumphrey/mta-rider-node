@@ -46,6 +46,9 @@ app.get('/schedule', (req, res, next) => {
     .then(result => res.send(result))
 })
 
+// for everything that doesn't match above
+app.use('/', (req, res, next) => res.send('Let\'s learn about NYCT'))
+
 // error handling middleware
 app.use(function (err, req, res, next) {
   console.error(err.stack)
