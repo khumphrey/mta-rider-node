@@ -1,9 +1,13 @@
 const express = require('express')
 const app = express()
+var cors = require('cors')
 const PORT = process.env.PORT || 3000
 const mtaKey = process.env.MTA_KEY || 'your key that you should not commit with git here'
 var mtaGtfs = require('mta-gtfs')
 var mta = new mtaGtfs({ key: mtaKey })
+
+// add allow all origins
+app.use(cors())
 
 // example query domain/stops?ids=[101,103,110]
 app.get('/stops', (req, res, next) => {
